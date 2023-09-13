@@ -6,14 +6,23 @@ import LightSwitch from './pages/LightSwitch';
 import NewBook from './pages/NewBook';
 import SingleBook from './pages/SingleBook';
 import Library from './pages/Library';
+import { useState } from 'react';
+
 
 function App() {
+  const [lightIsOn, setLightIsOn] = useState(true)
+  const [books, setBooks] = useState([]);
   return (
     <div id="app-container">
-      <Sidebar />
+      <Sidebar lightIsOn={lightIsOn}   />
       <Routes>
-        <Route path="/" element={<LightSwitch />} />
-        <Route path="/new" element={<NewBook />} />
+        <Route path="/" element={
+          <LightSwitch 
+          lightIsOn={lightIsOn} 
+          setLightIsOn={setLightIsOn} 
+          />} 
+        />
+        <Route path="/new" element={<NewBook books={books} setBooks={setBooks} />} />
         <Route path="/library" element={<Library />} />
         <Route path="/single_book" element={<SingleBook />} />
       </Routes>

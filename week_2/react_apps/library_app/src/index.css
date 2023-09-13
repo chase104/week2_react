@@ -23,6 +23,10 @@
   align-items: center;
 }
 
+.color-yellow {
+  color: yellow;
+}
+
 * {
   box-sizing: border-box;
 }

@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
+import LightModeIcon from '@mui/icons-material/LightMode';
 import './index.css';
-// import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
-const Sidebar = () => {
+const Sidebar = ({lightIsOn}) => {
   return (
     <aside id="sidebar">
       {/* user icon */}
-      {/* <AccountBoxIcon /> */}
-      <span>&#128571;</span>
+      <LightModeIcon className={`${lightIsOn ? "color-yellow" : ""}`}/>
+      <AccountBoxIcon />
       <div>Name ???? </div>
-
       {/* <button>Login/Create</button> */}
       <Link to="/" >
         <button>Light Switch</button>
